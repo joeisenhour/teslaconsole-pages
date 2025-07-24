@@ -20,7 +20,9 @@ This website provides a full-screen, app-like experience for web apps that are n
      - `name`: Display name for the app
      - `sortname`: Name used for sorting (optional, defaults to `name`)
 2. **Map your account to the new app list:**
-   - Add an entry to `apps/accounts.json` with a Microsoft account email and the name of your custom app list file. Any email address you add here will be visible to the entire world. So, it's probably a good idea to create a new Microsoft account/email just for this.
+   - Add an entry to `apps/accounts.json` with a Microsoft account email and the name of your custom app list file. 
+   
+   **Keep in mind:** any email you put here is going on display for the whole internet to see—so it's probably a good idea to create a new email account and never plan on using it for actual email.
      ```json
      {
        "email": "your-email@example.com",
