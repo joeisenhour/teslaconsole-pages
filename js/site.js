@@ -50,18 +50,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (signInBtn) {
         signInBtn.onclick = async () => {
             try {
-                const loginResponse = await msalInstance.loginPopup({ scopes: ["User.Read"] });
-                updateUI(loginResponse.account);
+                await msalInstance.loginRedirect({ scopes: ["User.Read"] });
             } catch (err) {
                 alert('Sign-in failed: ' + err.message);
             }
         };
     }
-    // Check if already signed in
-    const currentAccounts = msalInstance.getAllAccounts();
-    if (currentAccounts.length > 0) {
-        updateUI(currentAccounts[0]);
-    }
+
+    msalInstance.handleRedirectPromise().then((loginResponse) => {
+        if (loginResponse && loginResponse.account) {
+            updateUI(loginResponse.account);
+        } else {
+            const currentAccounts = msalInstance.getAllAccounts();
+            if (currentAccounts.length > 0) {
+                updateUI(currentAccounts[0]);
+            }
+        }
+    }).catch((err) => {
+        alert('Sign-in failed: ' + err.message);
+    });
 
     // Dynamically load and render apps from apps.json
     fetch('apps.json')
