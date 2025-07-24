@@ -5,7 +5,7 @@ const msalConfig = {
     auth: {
         clientId: "d560834e-ab2c-4bfe-bef8-3e65f6583c24", // Replace with your Azure AD client ID
         authority: "https://login.microsoftonline.com/consumers", // Microsoft consumer accounts
-        redirectUri: window.location.origin
+        redirectUri: "https://joeisenhour.github.io/teslaconsole-pages/"
     }
 };
 
