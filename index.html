@@ -7,6 +7,10 @@
     <script src="https://alcdn.msauth.net/browser/2.37.0/js/msal-browser.min.js"></script>
 </head>
 <body>
+    <div id="auth-container" style="text-align:right; margin-bottom:20px;">
+        <button id="signInBtn">Sign in</button>
+        <span id="userInfo" style="margin-left:10px;"></span>
+    </div>
     <main>
         <section id="apps-container">
             <!-- App tiles will be dynamically generated here -->
@@ -24,7 +28,3 @@
     </script>
 </body>
 </html>
-        <div id="auth-container" style="text-align:right; margin-bottom:20px;">
-            <button id="signInBtn">Sign in with Microsoft</button>
-            <span id="userInfo" style="margin-left:10px;"></span>
-        </div>
