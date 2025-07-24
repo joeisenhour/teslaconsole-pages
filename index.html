@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/site.css">
     <!-- MSAL.js for Microsoft Authentication -->
     <script src="https://alcdn.msauth.net/browser/2.37.0/js/msal-browser.min.js"></script>
+    <script src="js/site.js"></script>
 </head>
 <body>
     <div id="auth-container" style="text-align:right; margin-bottom:20px;">
@@ -16,15 +17,5 @@
             <!-- App tiles will be dynamically generated here -->
         </section>
     </main>
-    <script>
-        function goTo(site, isFullScreen) {
-            if (isFullScreen) {
-                location.href = 'https://www.youtube.com/redirect?q=' + site + '/';
-            }
-            else {
-                location.href = site;
-            }
-        }
-    </script>
 </body>
 </html>
