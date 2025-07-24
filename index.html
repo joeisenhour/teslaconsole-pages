@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>teslaconsole</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <main>
+        <section>
+            <div class="image-container">
+                <img src="plex.webp" class="rounded-image" onclick="goTo('https://app.plex.tv/desktop', true)" />
+                <label class="image-label">Plex</label>
+            </div>
+            <div class="image-container">
+                <img src="youtubetv.webp" class="rounded-image" onclick="goTo('https://tv.youtube.com', true)" />
+                <label class="image-label">YouTube TV</label>
+            </div>
+            <div class="image-container">
+                <img src="youtube.webp" class="rounded-image" onclick="goTo('https://youtube.com', true)" />
+                <label class="image-label">YouTube</label>
+            </div>
+            <div class="image-container">
+                <img src="disneyplus.webp" class="rounded-image" onclick="goTo('https://www.disneyplus.com', true)" />
+                <label class="image-label">Disney+</label>
+            </div>
+            <div class="image-container">
+                <img src="netflix.webp" class="rounded-image" onclick="goTo('https://netflix.com', true)" />
+                <label class="image-label">Netflix</label>
+            </div>
+            <div class="image-container">
+                <img src="dailywire.webp" class="rounded-image" onclick="goTo('https://dailywire.com', true)" />
+                <label class="image-label">DailyWire+</label>
+            </div>
+            <div class="image-container">
+                <img src="paramount.webp" class="rounded-image" onclick="goTo('https://www.paramountplus.com', true)" />
+                <label class="image-label">Paramount+</label>
+            </div>
+            <div class="image-container">
+                <img src="espn.webp" class="rounded-image" onclick="goTo('https://www.espn.com/espnplus', true)" />
+                <label class="image-label">ESPN+</label>
+            </div>
+            <div class="image-container">
+                <img src="waze.webp" class="rounded-image" onclick="goTo('https://waze.com', false)" />
+                <label class="image-label">Waze</label>
+            </div>
+            <div class="image-container">
+                <img src="justwatch.webp" class="rounded-image" onclick="goTo('https://justwatch.com', true)" />
+                <label class="image-label">JustWatch</label>
+            </div>
+            <div class="image-container">
+                <img src="prime.webp" class="rounded-image" onclick="goTo('https://www.amazon.com/gp/video/mystuff?ref_=nav_em__aiv_ms_0_2_2_6', true)" />
+                <label class="image-label">Prime</label>
+            </div>
+            <div class="image-container">
+                <img src="appletv.webp" class="rounded-image" onclick="goTo('https://tv.apple.com', true)" />
+                <label class="image-label">Apple TV</label>
+            </div>
+            <div class="image-container">
+                <img src="iphoto.webp" class="rounded-image" onclick="goTo('https://www.icloud.com/photos', true)" />
+                <label class="image-label">Photos</label>
+            </div>
+            <div class="image-container">
+                <img src="max.webp" class="rounded-image" onclick="goTo('https://play.max.com', true)" />
+                <label class="image-label">Max</label>
+            </div>
+            <!--
+            <div class="image-container">
+                <img src="rdp.webp" class="rounded-image" onclick="goTo('https://frostynixon.com/RDWeb/webclient/index.html', true)" />
+                <label class="image-label">Remote Desktop</label>
+            </div>-->
+        </section>
+    </main>
+    <script>
+        function goTo(site, isFullScreen) {
+            if (isFullScreen) {
+                location.href = 'https://www.youtube.com/redirect?q=' + site + '/';
+            }
+            else {
+                location.href = site;
+            }
+        }
+    </script>
+</body>
+</html>
