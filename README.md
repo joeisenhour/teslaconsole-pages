@@ -37,6 +37,3 @@ This website provides a full-screen, app-like experience for web apps that are n
 - Only Microsoft consumer accounts are supported for sign-in
 - For local development, use Live Server or a similar tool and ensure you access using http://localhost:5500
 - Feel free to make the site better, e.g. support other types of consumer accounts
-
-
-
