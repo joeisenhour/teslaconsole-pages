@@ -35,13 +35,6 @@
     "sortname": "Netflix"
   },
   {
-    "img": "dailywire.webp",
-    "goto": "https://dailywire.com",
-    "isFullscreen": true,
-    "name": "DailyWire+",
-    "sortname": "DailyWire+"
-  },
-  {
     "img": "paramount.webp",
     "goto": "https://www.paramountplus.com",
     "isFullscreen": true,
