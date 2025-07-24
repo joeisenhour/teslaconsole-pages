@@ -1,1 +1,0 @@
-/* Copied from wwwroot/lib/jquery/LICENSE.txt */

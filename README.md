@@ -1,7 +1,7 @@
 # Tesla Console
 
 ## Purpose
-This website provides a full-screen, app-like experience for web apps that are not natively supported by the Tesla infotainment system built into Tesla cars. It is designed to make popular streaming, navigation, and utility web apps easily accessible in a format that feels like a native Tesla app.
+This website provides a full-screen, app-like experience for web apps that are not natively supported by the Tesla infotainment system built into Tesla cars. It is designed to make popular streaming, navigation, and utility web apps easily accessible in a format that feels like a native Tesla app. Just visit and bookmark https://tesla.frostynixon.com from your Tesla browser.
 
 ## How Apps Work
 - The site opens apps by bouncing the url off of the tesla youtube app url, thus creating a full-screen/app like experience in your tesla car console.
