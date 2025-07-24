@@ -33,6 +33,15 @@ function updateUI(account) {
     }
 }
 
+function goTo(site, isFullScreen) {
+    if (isFullScreen) {
+        location.href = 'https://www.youtube.com/redirect?q=' + site + '/';
+    }
+    else {
+        location.href = site;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const signInBtn = document.getElementById('signInBtn');
     // Hide main content until signed in and allowed
