@@ -1,90 +1,90 @@
 [
   {
-    "img": "plex.webp",
+    "img": "images/plex.webp",
     "goto": "https://app.plex.tv/desktop",
     "isFullscreen": true,
     "name": "Plex",
     "sortname": "Plex"
   },
   {
-    "img": "youtubetv.webp",
+    "img": "images/youtubetv.webp",
     "goto": "https://tv.youtube.com",
     "isFullscreen": true,
     "name": "YouTube TV",
     "sortname": "YouTube TV"
   },
   {
-    "img": "youtube.webp",
+    "img": "images/youtube.webp",
     "goto": "https://youtube.com",
     "isFullscreen": true,
     "name": "YouTube",
     "sortname": "YouTube"
   },
   {
-    "img": "disneyplus.webp",
+    "img": "images/disneyplus.webp",
     "goto": "https://www.disneyplus.com",
     "isFullscreen": true,
     "name": "Disney+",
     "sortname": "Disney+"
   },
   {
-    "img": "netflix.webp",
+    "img": "images/netflix.webp",
     "goto": "https://netflix.com",
     "isFullscreen": true,
     "name": "Netflix",
     "sortname": "Netflix"
   },
   {
-    "img": "paramount.webp",
+    "img": "images/paramount.webp",
     "goto": "https://www.paramountplus.com",
     "isFullscreen": true,
     "name": "Paramount+",
     "sortname": "Paramount+"
   },
   {
-    "img": "espn.webp",
+    "img": "images/espn.webp",
     "goto": "https://www.espn.com/espnplus",
     "isFullscreen": true,
     "name": "ESPN+",
     "sortname": "ESPN+"
   },
   {
-    "img": "waze.webp",
+    "img": "images/waze.webp",
     "goto": "https://waze.com",
     "isFullscreen": false,
     "name": "Waze",
     "sortname": "Waze"
   },
   {
-    "img": "justwatch.webp",
+    "img": "images/justwatch.webp",
     "goto": "https://justwatch.com",
     "isFullscreen": true,
     "name": "JustWatch",
     "sortname": "JustWatch"
   },
   {
-    "img": "prime.webp",
+    "img": "images/prime.webp",
     "goto": "https://www.amazon.com/gp/video/mystuff?ref_=nav_em__aiv_ms_0_2_2_6",
     "isFullscreen": true,
     "name": "Prime",
     "sortname": "Prime"
   },
   {
-    "img": "appletv.webp",
+    "img": "images/appletv.webp",
     "goto": "https://tv.apple.com",
     "isFullscreen": true,
     "name": "Apple TV",
     "sortname": "Apple TV"
   },
   {
-    "img": "iphoto.webp",
+    "img": "images/iphoto.webp",
     "goto": "https://www.icloud.com/photos",
     "isFullscreen": true,
     "name": "Photos",
     "sortname": "Photos"
   },
   {
-    "img": "max.webp",
+    "img": "images/max.webp",
     "goto": "https://play.max.com",
     "isFullscreen": true,
     "name": "Max",

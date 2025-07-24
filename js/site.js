@@ -5,76 +5,51 @@ const msalConfig = {
     auth: {
         clientId: "d560834e-ab2c-4bfe-bef8-3e65f6583c24", // Replace with your Azure AD client ID
         authority: "https://login.microsoftonline.com/consumers", // Microsoft consumer accounts
-        redirectUri: "https://joeisenhour.github.io/teslaconsole-pages/"
+        redirectUri: window.location.origin
     }
 };
 
 const msalInstance = new msal.PublicClientApplication(msalConfig);
 
-// Allowed accounts array is now global
-const allowedAccounts = ["teslaconsole-pages@hotmail.com"];
-
 function updateUI(account) {
     const userInfo = document.getElementById('userInfo');
     const signInBtn = document.getElementById('signInBtn');
-    const mainContent = document.querySelector('main');
-    if (account && allowedAccounts.includes(account.username.toLowerCase())) {
+    if (account) {
         userInfo.textContent = `Signed in as: ${account.username}`;
         signInBtn.style.display = 'none';
-        if (mainContent) mainContent.style.display = '';
-    } else if (account) {
-        userInfo.textContent = `Account not allowed: ${account.username}`;
-        signInBtn.style.display = 'none';
-        if (mainContent) mainContent.style.display = 'none';
+        loadAppsForUser(account.username);
     } else {
         userInfo.textContent = '';
         signInBtn.style.display = 'inline-block';
-        if (mainContent) mainContent.style.display = 'none';
+        loadAppsForUser(null);
     }
 }
 
-function goTo(site, isFullScreen) {
-    if (isFullScreen) {
-        location.href = 'https://www.youtube.com/redirect?q=' + site + '/';
-    }
-    else {
-        location.href = site;
+function loadAppsForUser(email) {
+    // Default apps file
+    let appsFile = 'apps/defaultApps.json';
+    if (email) {
+        fetch('apps/accounts.json')
+            .then(response => response.json())
+            .then(accounts => {
+                const entry = accounts.find(acc => acc.email.toLowerCase() === email.toLowerCase());
+                if (entry && entry.appsFile) {
+                    appsFile = 'apps/' + entry.appsFile;
+                }
+                renderApps(appsFile);
+            })
+            .catch(() => {
+                renderApps(appsFile);
+            });
+    } else {
+        renderApps(appsFile);
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const signInBtn = document.getElementById('signInBtn');
-    // Hide main content until signed in and allowed
-    const mainContent = document.querySelector('main');
-    if (mainContent) mainContent.style.display = 'none';
-    if (signInBtn) {
-        signInBtn.onclick = async () => {
-            try {
-                await msalInstance.loginRedirect({ scopes: ["User.Read"] });
-            } catch (err) {
-                alert('Sign-in failed: ' + err.message);
-            }
-        };
-    }
-
-    msalInstance.handleRedirectPromise().then((loginResponse) => {
-        if (loginResponse && loginResponse.account) {
-            updateUI(loginResponse.account);
-        } else {
-            const currentAccounts = msalInstance.getAllAccounts();
-            if (currentAccounts.length > 0) {
-                updateUI(currentAccounts[0]);
-            }
-        }
-    }).catch((err) => {
-        alert('Sign-in failed: ' + err.message);
-    });
-
-    // Dynamically load and render apps from apps.json
-    fetch('apps.json')
+function renderApps(appsFile) {
+    fetch(appsFile)
         .then(response => response.json())
         .then(apps => {
-            // Sort by sortname
             apps.sort((a, b) => a.sortname.localeCompare(b.sortname));
             const container = document.getElementById('apps-container');
             if (container) {
@@ -99,6 +74,49 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
         .catch(err => {
-            console.error('Failed to load apps.json:', err);
+            console.error('Failed to load ' + appsFile + ':', err);
         });
+}
+
+function goTo(site, isFullScreen) {
+    if (isFullScreen) {
+        location.href = 'https://www.youtube.com/redirect?q=' + site + '/';
+    }
+    else {
+        location.href = site;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const signInBtn = document.getElementById('signInBtn');
+    // Hide main content until signed in and allowed
+    const mainContent = document.querySelector('main');
+    if (mainContent) mainContent.style.display = '';
+    if (signInBtn) {
+        signInBtn.onclick = async () => {
+            try {
+                await msalInstance.loginRedirect({ scopes: ["User.Read"] });
+            } catch (err) {
+                alert('Sign-in failed: ' + err.message);
+            }
+        };
+    }
+
+    msalInstance.handleRedirectPromise().then((loginResponse) => {
+        if (loginResponse && loginResponse.account) {
+            updateUI(loginResponse.account);
+        } else {
+            const currentAccounts = msalInstance.getAllAccounts();
+            if (currentAccounts.length > 0) {
+                updateUI(currentAccounts[0]);
+            } else {
+                updateUI(null);
+            }
+        }
+    }).catch((err) => {
+        alert('Sign-in failed: ' + err.message);
+    });
+
+    // Initial load: show default apps before any sign-in
+    renderApps('apps/defaultApps.json');
 });

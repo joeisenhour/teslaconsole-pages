@@ -1,26 +1,42 @@
-# teslaconsole GitHub Pages
+# Tesla Console Pages
 
-This directory contains a static version of the teslaconsole web app, ready to be deployed to GitHub Pages.
+## Purpose
+This website provides a full-screen, app-like experience for web apps that are not natively supported by the Tesla infotainment system built into Tesla cars. It is designed to make popular streaming, navigation, and utility web apps easily accessible in a format that feels like a native Tesla app.
 
-## How to Deploy to GitHub Pages
+## How Accounts and App Lists Work
+- The site displays a default list of apps from `apps/defaultApps.json` for all users, including those who are not signed in.
+- When a user signs in with a Microsoft account, the site checks `apps/accounts.json` for a mapping between their email and a custom app list JSON file.
+- If a mapping exists, the user's custom app list is loaded from the specified JSON file in the `apps` directory.
+- If no mapping exists, the default app list is shown.
 
-1. **Push the `GithubPages` folder to your repository.**
-   - Make sure all files (HTML, CSS, JS, images, etc.) are inside the `GithubPages` directory.
+## Adding a New Custom App List
+1. **Create a new app list JSON file:**
+   - Place your new file in the `apps` directory (e.g., `apps/myCustomApps.json`).
+   - The file should contain an array of app objects with the following properties:
+     - `img`: Path to the app icon (e.g., `images/myapp.webp`)
+     - `goto`: The URL to open for the app
+     - `isFullscreen`: `true` or `false` for full-screen behavior
+     - `name`: Display name for the app
+     - `sortname`: Name used for sorting (optional, defaults to `name`)
+2. **Map your account to the new app list:**
+   - Add an entry to `apps/accounts.json` with your Microsoft account email and the name of your custom app list file:
+     ```json
+     {
+       "email": "your-email@example.com",
+       "appsFile": "myCustomApps.json"
+     }
+     ```
+3. **Test your changes locally or on GitHub Pages.**
 
-2. **Configure GitHub Pages:**
-   - Go to your repository on GitHub.
-   - Click on **Settings** > **Pages**.
-   - Under **Source**, select the branch (usually `main` or `master`) and set the folder to `/GithubPages`.
-   - Save your changes.
-
-3. **Access your site:**
-   - After a few moments, your site will be available at `https://<your-username>.github.io/<your-repo>/`.
+## Submitting a Pull Request
+- You are welcome to submit a pull request to add a new custom app JSON and account entry in `apps/accounts.json`.
+- The repo owner reserves the right to refuse any pull request that contains adult or offensive material, or links to such material.
 
 ## Notes
-- Only static content is supported. Dynamic server-side features from ASP.NET Core are not available.
-- Update asset references in your HTML if you add new files.
-- For custom domains, configure in the GitHub Pages settings.
+- All app icons should be placed in the `images` directory and referenced accordingly in your app list JSON
+- Only Microsoft consumer accounts are supported for sign-in
+- For local development, use Live Server or a similar tool and ensure you access using http://localhost:5500
+- Feel free to make the site better, e.g. support other types of consumer accounts
 
----
 
-For more details, see the [GitHub Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages).
+
