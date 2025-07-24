@@ -1,1 +1,43 @@
-/* Copied from wwwroot/css/site.css */
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin-bottom: 60px;
+    padding: 0;
+    background: linear-gradient(to bottom, #eee, #fff);
+}
+
+.rounded-image {
+    border-radius: 20px;
+    height: 150px;
+    width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow effect */
+}
+
+.image-container {
+    text-align: center; /* Center the image and label */
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 10px; /* Add gap between the image and label */
+}
+
+section {
+    margin-top: 50px;
+    display: grid; /* Use grid layout for the section */
+    grid-template-columns: repeat(3, 1fr); /* Create two equal columns */
+    gap: 20px; /* Add gap between the image containers */
+}
