@@ -1,5 +1,73 @@
+/* Top bar styling */
+#accountDropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 6px;
+    min-width: 120px;
+    z-index: 2000;
+}
+#accountDropdown button {
+    width: 100%;
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 14px;
+    color: #222;
+    cursor: pointer;
+}
+#topbar {
+    width: 100%;
+    height: 48px;
+    background: #f3f3f5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    position: relative;
+    z-index: 1001;
+    margin: 0;
+    padding: 0;
+}
+
+#userBar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-right: 24px;
+}
+
+#userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 13px;
+    color: #666;
+    text-align: right;
+}
+
+#userThumb {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: none;
+    background: #e0e0e0;
+}
+
+#signInBtn {
+    font-size: 13px;
+    padding: 6px 16px;
+}
 html {
   font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 768px) {
@@ -15,7 +83,7 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    margin-bottom: 60px;
+    margin: 0 0 60px 0;
     padding: 0;
     background: linear-gradient(to bottom, #eee, #fff);
 }

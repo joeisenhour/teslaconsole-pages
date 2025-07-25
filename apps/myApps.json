@@ -42,25 +42,11 @@
     "sortname": "Paramount+"
   },
   {
-    "img": "images/espn.webp",
-    "goto": "https://www.espn.com/espnplus",
-    "isFullscreen": true,
-    "name": "ESPN+",
-    "sortname": "ESPN+"
-  },
-  {
     "img": "images/waze.webp",
     "goto": "https://waze.com",
     "isFullscreen": false,
     "name": "Waze",
     "sortname": "Waze"
-  },
-  {
-    "img": "images/justwatch.webp",
-    "goto": "https://justwatch.com",
-    "isFullscreen": true,
-    "name": "JustWatch",
-    "sortname": "JustWatch"
   },
   {
     "img": "images/prime.webp",
@@ -82,13 +68,6 @@
     "isFullscreen": true,
     "name": "Photos",
     "sortname": "Photos"
-  },
-  {
-    "img": "images/max.webp",
-    "goto": "https://play.max.com",
-    "isFullscreen": true,
-    "name": "Max",
-    "sortname": "Max"
   },
   {
     "img": "images/amazon.webp",

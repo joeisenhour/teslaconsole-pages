@@ -8,9 +8,15 @@
     <script src="js/site.js"></script>
 </head>
 <body>
-    <div id="auth-container" style="text-align:right; margin-bottom:20px;">
-        <button id="signInBtn">Sign in</button>
-        <span id="userInfo" style="margin-left:10px;"></span>
+    <div id="topbar">
+        <div id="userBar">
+            <div id="userInfo" style="cursor:pointer; position:relative;"></div>
+            <div id="accountDropdown" style="display:none; position:absolute; top:40px; right:0; background:#fff; border:1px solid #ddd; box-shadow:0 2px 8px rgba(0,0,0,0.08); border-radius:6px; min-width:120px; z-index:2000;">
+                <button id="signOutBtn" style="width:100%; padding:8px 16px; background:none; border:none; text-align:left; font-size:14px; color:#222; cursor:pointer;">Sign out</button>
+            </div>
+            <img id="userThumb" src="" alt="" />
+            <button id="signInBtn">Sign in</button>
+        </div>
     </div>
     <main>
         <section id="apps-container">

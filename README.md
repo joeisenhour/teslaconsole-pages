@@ -6,7 +6,7 @@ This website provides a full-screen, app-like experience for web apps that are n
 ## How Apps Work
 - The site opens apps by bouncing the url off of the tesla youtube app url, thus creating a full-screen/app like experience in your tesla car console.
 - The site displays a default list of apps from `apps/defaultApps.json` for all users, including those who are not signed in.
-- When a user signs in with a Microsoft account, the site checks `apps/accounts.json` for a mapping between their email and a custom app list JSON file.
+- When a user signs in with a Microsoft account, the site checks `apps/accounts.json` for a mapping between their **oid** (Object ID, shown in the top-right banner after sign-in) and a custom app list JSON file.
 - If a mapping exists, the user's custom app list is loaded from the specified JSON file in the `apps` directory.
 - If no mapping exists, the default app list is shown.
 
@@ -20,15 +20,16 @@ This website provides a full-screen, app-like experience for web apps that are n
      - `name`: Display name for the app
      - `sortname`: Name used for sorting (optional, defaults to `name`)
 2. **Map your account to the new app list:**
-   - Add an entry to `apps/accounts.json` with a Microsoft account email and the name of your custom app list file. 
-   
-   **Keep in mind:** any email you put here is going on display for the whole internet to see—so it's probably a good idea to create a new email account and never plan on using it for actual email.
+   - Add an entry to `apps/accounts.json` with your Microsoft account **oid** and the name of your custom app list file. 
+   - You can find your oid in the top-right banner after signing in.
+   - Example entry:
      ```json
      {
-       "email": "your-email@example.com",
+       "oid": "00000000-0000-0000-bfee-16b06b814cd4",
        "appsFile": "myCustomApps.json"
      }
      ```
+   - The oid is a unique identifier for your Microsoft account and is not considered sensitive information for this purpose.
 3. **Test your changes locally or on GitHub Pages.**
 
 ## Submitting a Pull Request
