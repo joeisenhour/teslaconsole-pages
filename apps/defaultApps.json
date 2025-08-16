@@ -48,6 +48,13 @@
     "name": "ESPN+",
     "sortname": "ESPN+"
   },
+    {
+    "img": "images/espn.webp",
+    "goto": "https://moviesanywhere.com",
+    "isFullscreen": true,
+    "name": "Movies Anywhere",
+    "sortname": "Movies Anywhere"
+  },
   {
     "img": "images/waze.webp",
     "goto": "https://waze.com",
