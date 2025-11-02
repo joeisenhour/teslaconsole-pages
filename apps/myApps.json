@@ -82,5 +82,13 @@
     "isFullscreen": true,
     "name": "Hulu",
     "sortname": "Hulu"
+  },
+  {
+    "img": "images/rosetta.webp",
+    "goto": "https://rosettastone.com",
+    "isFullscreen": true,
+    "name": "Rosetta Stone",
+    "sortname": "RosettaStone"
   }
+  
 ]
