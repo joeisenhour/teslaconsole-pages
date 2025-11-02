@@ -3,7 +3,7 @@
 // MSAL.js authentication setup
 const msalConfig = {
     auth: {
-        clientId: "537a70e1-a014-47d1-a9f1-dce40478eb99", // Replace with your Azure AD client ID
+        clientId: "415c3cb6-df40-4b22-a959-dbab85371a55", // Replace with your Azure AD client ID
         authority: "https://login.microsoftonline.com/consumers", // Microsoft consumer accounts
         redirectUri: window.location.origin
     }
