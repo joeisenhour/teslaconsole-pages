@@ -89,5 +89,12 @@
     "isFullscreen": true,
     "name": "Rosetta Stone",
     "sortname": "RosettaStone"
-  }  
+  },
+  {
+    "img": "images/Rec0deD88.png",
+    "goto": "https://rec0ded88.com",
+    "isFullscreen": true,
+    "name": "Recoded88",
+    "sortname": "Recoded88"
+  }
 ]
